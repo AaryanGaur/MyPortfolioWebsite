@@ -1,0 +1,228 @@
+.appWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  padding: 0.5rem;
+  font-family: var(--font-family);
+  color: black;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.homePage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 95%;
+  max-width: 800px;
+  background: linear-gradient(
+    to bottom,
+    rgba(238, 238, 238, 1),
+    rgba(255, 255, 255, 1)
+  );
+  width: 100%;
+  max-height: 90vh;
+  min-height: 500px;
+  border-radius: 10px;
+  border: 2px solid darkgray;
+  box-shadow: 5px 4px 6px 2px rgba(77, 75, 75, 0.3);
+  overflow: hidden;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clockContainer {
+    margin-top: 2.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem; /* smaller padding for thinner bar */
+  height: 2.2rem; /* optional: set exact height */
+  border-bottom: 1px solid #ccc;
+  background-color: #303030;
+  border-bottom: 2px solid darkgray;
+  width: 100%;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+.headerTitle {
+  margin-left: 0.5rem;
+}
+
+.mainContent {
+  flex-direction: column;
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.introText {
+  text-align: center;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.highlightName {
+  color: rgb(255, 136, 0); /* Tomato color */
+  font-weight: bold;
+}
+
+.buttonContainer {
+    margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.imageIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.3rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* inherit color from parent */
+}
+
+.buttonText {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dogVideo {
+  position: fixed; /* or absolute, depending on your layout */
+  bottom: 20px; /* distance from bottom of viewport */
+  right: 0vh; /* distance from right of viewport */
+  width: 150px; /* or whatever size you want */
+  height: auto;
+  max-width: 400px;
+  max-height: 300px;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.waveContainer {
+  position: absolute;
+  height: 40%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: -100;
+}
+
+.waveContainer svg {
+  z-index: -10;
+}
+
+.wave {
+  left: 0;
+  z-index: -5;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* popup animation */
+@keyframes popupScaleIn {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animatePopup {
+  animation: popupScaleIn 0.3s ease-out;
+}
+
+/* sound stuff */
+.soundToggle {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: black;
+  cursor: pointer;
+}
+
+.soundToggle input[type="checkbox"] {
+  position: relative;
+  margin-left: 1rem;
+  appearance: none;
+  width: 50px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #ccc;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* toggle circle */
+.soundToggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black; /* black when OFF */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* toggle background and move circle when ON */
+.soundToggle input[type="checkbox"]:checked {
+  background-color: #4caf50; /* green when ON */
+}
+
+.soundToggle input[type="checkbox"]:checked::before {
+  transform: translateX(30px); /* move to the right */
+  background-color: white; /* white when ON */
+}
+
+.toggleText {
+  margin-left: 0.5rem;
+}
+
+.contactContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 80%;
+  position: relative;
+}

@@ -1,0 +1,213 @@
+.popupBox {
+    position: fixed;
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0.95), rgba(255, 255, 255, 0.95));
+    width: 90%;
+    height: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    border-radius: 10px;
+    border: 2px solid darkgray;
+    overflow: hidden;
+    box-shadow: 5px 4px 6px 2px rgba(77, 75, 75, 0.3);
+    color: black;
+}
+
+@media (max-width: 768px) {
+  .popupBox {
+    width: 100vw;
+    height: 90dvh;
+    max-width: none;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    top: 10% !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    overflow-y: hidden;
+    border-radius: 0;
+    border: none;
+  }
+
+  .content {
+    height: 100%; /* leave space for dragBar */
+    overflow-y: auto;
+    max-height: none !important;
+    padding: 1rem;
+  }
+}
+
+.dragBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0.5rem; /* smaller padding for thinner bar */
+    height: 2.2rem; /* optional: set exact height */
+    margin-right: 0.5rem;
+    background-color: #303030;
+    border-bottom: 2px solid darkgray;
+    width: 100%;
+    align-items: center;
+    font-weight: bold;
+    cursor: grab;
+    color: white;
+}
+
+.title {
+    margin-right: 1.2rem;
+}
+
+.closeBtn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.closeBtn:hover {
+    transform: scale(1.1);
+}
+
+.closeIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.content{
+  flex: 1;
+  max-height: 90%;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: darkgray white;
+}
+
+.content::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+}
+
+/* Animate popup */
+@keyframes popupScaleIn {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animatePopup {
+  animation: popupScaleIn 0.2s ease-out forwards;
+}
+
+/* closing animation */ 
+@keyframes popupScaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+.animatePopupOut {
+  animation: popupScaleOut 0.2s ease-in forwards;
+}
+
+
+
+/* tools section */ 
+.contentTitle {
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: black;
+}
+
+/* tools button */
+.toolsButton {
+    background-color: white;
+    font-size: small;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    box-shadow: 0px 3px 0px rgba(40, 40, 40, 0.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+.toolsButton:hover {
+    transform: translateY(2px);
+}
+
+/* project stuff */
+.projectSection {
+    display: flex; 
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+
+.projectImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.projectCard {
+  background-color: black;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.projectCard:hover {
+  transform: scale(1.03);
+}
+
+
+/* mobile animations */
+@keyframes popupSlideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes popupSlideOut {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+.animatePopupMobile {
+  animation: popupSlideIn 0.7s ease-in-out forwards;
+}
+
+.animatePopupOutMobile {
+  animation: popupSlideOut 0.7s ease-in-out forwards;
+}

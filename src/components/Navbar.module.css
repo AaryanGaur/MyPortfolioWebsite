@@ -1,0 +1,120 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  z-index: 1000;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+/* Default display is for desktop */
+.menuIcon {
+    display: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navLinks li a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+    transition: ease-in-out 0.3s;
+    z-index: 1;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Extra styles for the navbar */
+
+/* Hover effect for links using a pseudo element */
+.navLinks li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  border-radius: 4px;         /* optional, rounded corners */
+  transition: width 0.3s ease;
+  z-index: -1;                /* behind text */
+}
+
+/* on hover, expand the pseudo element */
+.navLinks li a:hover::before {
+    width: 100%;
+}
+.navLinks li a:hover {
+    color: #000;
+}
+
+/* styling for the menu icon */
+.menuIcon:hover {
+    transform: scale(1.1);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navContainer {
+        position: absolute;
+        right: 0;
+        margin-right: 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+
+    .menuIcon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 10px;
+        background-color: #000;
+        padding: 1rem;
+    }
+
+    .menuOpen {
+        display: flex;
+        z-index: 1;
+    }
+
+    
+}
+
+
+
