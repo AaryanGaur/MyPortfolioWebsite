@@ -5,19 +5,20 @@ export default function RetroClock() {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
-    const interval = setInterval(() => setTime(new Date()), 1000)
+    const interval = setInterval(() => setTime(new Date()), 50)
     return () => clearInterval(interval)
   }, [])
 
   const hours = time.getHours()
   const minutes = time.getMinutes()
+  const miliseconds = time.getMilliseconds()
 
   const hourDeg = (hours % 12) * 30 + minutes * 0.5
   const minuteDeg = minutes * 6
 
   // seconds
   const seconds = time.getSeconds()
-  const secondDeg = (seconds * 6) 
+  const secondDeg = (seconds + miliseconds / 1000) * 6
 
   // styles for everything
   const secondStyle = {
