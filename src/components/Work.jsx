@@ -286,15 +286,49 @@ export default function Work({
                   Java Chess Game Engine
                 </h5>
                 <p className={styles.paragraph}>
-                  Built a fully functional chess game engine in Java, implementing
-                    all standard chess rules and mechanics. Only used standard libraries, no external dependencies. The engine supports all chess moves, including castling and en passant, castling, etc. 
+                  Built a fully functional chess game engine in Java,
+                  implementing all standard chess rules and mechanics. Only used
+                  standard libraries, no external dependencies. The engine
+                  supports all chess moves, including castling and en passant,
+                  castling, etc.
                 </p>
               </div>
             </div>
             <div className={styles.divider} />
-
+            <div className={styles.projectBody}>
+              {/*Here we will write the content for the work*/}
+              <a
+                href="https://aaryangaur.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.button}
+              >
+                <img
+                  src="/assets/website.png"
+                  alt="Chess Engine"
+                  className={styles.imageIcon}
+                />
+              </a>
+              <div className={styles.projectDescription}>
+                <h5 className={styles.descriptionTitle}>
+                  This Portfolio Website!
+                </h5>
+                <p className={styles.paragraph}>
+                  Built this portfolio website using React, CSS, and JavaScript.
+                  It showcases my projects, skills, and experience in a visually
+                  appealing way. The site is fully responsive and works well on
+                  both desktop and mobile devices.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className={styles.development}></div>
+          <div className={styles.divider} />
+          <h4 className={styles.projectTitle}>End Note</h4>
+            <p className={styles.paragraph}>
+                More projects are listed on my Github! I am always looking for new opportunities to learn and grow as a
+                developer. If you have any interesting projects or ideas, feel free
+                to reach out!
+            </p>
         </div>
       </div>
     </>
