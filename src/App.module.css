@@ -56,6 +56,9 @@
       rgba(238, 238, 238, 0.65),
       rgba(255, 255, 255, 0.65)
     );
+    max-height: 40vh;
+    top: 40%;
+
   }
 }
 
@@ -240,15 +243,8 @@ a {
 
 @media (max-width: 768px) {
   .contactContainer {
-    top: 25vh;
-    margin-top: 0;
-    padding-top: 0;
-    flex-direction: column;
-    bottom: auto;
-    right: 20px;
-    left: auto;
-    transform: none;
-    align-items: flex-end;
-    z-index: 100000
+    top: 62%;
   }
 }
+
+
