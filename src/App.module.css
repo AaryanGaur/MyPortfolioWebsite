@@ -240,7 +240,7 @@ a {
 
 @media (max-width: 768px) {
   .contactContainer {
-    top: 15rem;
+    top: 25vh;
     margin-top: 0;
     padding-top: 0;
     flex-direction: column;
